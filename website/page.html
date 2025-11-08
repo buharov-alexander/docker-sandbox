@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Визитка — Ваше имя</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --accent:#2563eb; --muted:#667085;
+      --radius:16px; --shadow: 0 6px 18px rgba(16,24,40,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg),#ffffff);
+      display:flex; align-items:center; justify-content:center; padding:32px;
+      color:#0f172a;
+    }
+    .card{
+      width:100%; max-width:920px; background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+      display:grid; grid-template-columns: 260px 1fr; gap:24px; padding:28px; align-items:center;
+    }
+    .avatar{
+      width:200px; height:200px; border-radius:12px; background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:48px;
+    }
+    .left{display:flex; flex-direction:column; align-items:center; gap:16px}
+    h1{margin:0; font-size:26px}
+    .role{color:var(--muted); margin-top:6px}
+    .company{display:inline-block; margin-top:6px; padding:6px 10px; background:#f1f5f9; border-radius:8px; color:#0b1220; font-weight:600}
+    .contact{display:flex; flex-direction:column; gap:10px}
+    .contact a{display:flex; gap:12px; align-items:center; text-decoration:none; color:inherit}
+    .icon{width:18px; height:18px; opacity:0.9}
+    .right{padding-right:6px}
+    .about{color:var(--muted); line-height:1.5; margin-bottom:12px}
+    .badges{display:flex; gap:8px; flex-wrap:wrap}
+    .badge{background:#f8fafc; padding:8px 10px; border-radius:999px; font-weight:600; font-size:13px; color:#0b1220}
+    .actions{margin-top:16px; display:flex; gap:12px}
+    .btn{border:0; padding:10px 14px; border-radius:10px; font-weight:600; cursor:pointer}
+    .btn-primary{background:var(--accent); color:white}
+    .btn-ghost{background:transparent; border:1px solid #e6eef9; color:var(--accent)}
+    footer{grid-column:1/-1; text-align:center; color:var(--muted); font-size:13px; margin-top:6px}
+
+    /* Responsive */
+    @media (max-width:720px){
+      .card{grid-template-columns:1fr; padding:18px}
+      .avatar{width:140px;height:140px;font-size:36px}
+    }
+
+    /* Print-friendly */
+    @media print{
+      body{background:white}
+      .card{box-shadow:none; border-radius:6px}
+      .actions,.badges{display:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <section class="left">
+      <div class="avatar" aria-hidden="true">AB</div>
+      <div style="text-align:center">
+        <div class="company">Acme Tech</div>
+      </div>
+      <div class="contact" style="width:100%; margin-top:6px">
+        <a href="tel:+71234567890"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5A2.5 2.5 0 015.5 3h2A1.5 1.5 0 019 4.5v3A1.5 1.5 0 017.5 9H7a6 6 0 006 6v-.5A1.5 1.5 0 0013 13h-3A1.5 1.5 0 008.5 14.5v2A2.5 2.5 0 0114 19h1"></path></svg> +7 (123) 456-7890</a>
+        <a href="mailto:hello@example.com"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.5L12 13l9-6.5"/></svg> hello@example.com</a>
+        <a href="https://example.com" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20M2 12h20"/></svg> example.com</a>
+      </div>
+    </section>
+
+    <section class="right">
+      <h1>Иван Петров</h1>
+      <div class="role">Senior Software Engineer</div>
+
+      <p class="about">Краткое описание: я помогаю компаниям строить надёжные распределённые системы и автоматизировать бизнес-процессы. Специализация: Java, Spring, Kafka, Docker.</p>
+
+      <div class="badges">
+        <div class="badge">Java</div>
+        <div class="badge">Spring</div>
+        <div class="badge">Kafka</div>
+        <div class="badge">Distributed Systems</div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" onclick="copyEmail()">Скопировать e‑mail</button>
+        <a class="btn btn-ghost" href="mailto:hello@example.com">Написать</a>
+      </div>
+
+      <div style="margin-top:18px; display:flex; gap:12px; align-items:center">
+        <!-- social icons -->
+        <a href="#" title="LinkedIn" aria-label="LinkedIn" style="text-decoration:none">
+          <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="3" ry="3" fill="none" stroke="currentColor"/></svg>
+        </a>
+        <a href="#" title="GitHub" aria-label="GitHub" style="text-decoration:none">
+          <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0112 6.8c.85.004 1.71.116 2.51.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.2 2.39.1 2.65.64.7 1.03 1.6 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+        </a>
+      </div>
+
+    </section>
+
+    <footer>Нажмите «Печать», чтобы получить печатную визитку. Замените данные в HTML на свои.</footer>
+  </main>
+
+  <script>
+    function copyEmail(){
+      navigator.clipboard?.writeText('hello@example.com').then(()=>{
+        alert('E-mail скопирован в буфер обмена');
+      }, ()=> alert('Не удалось скопировать.')); 
+    }
+  </script>
+</body>
+</html>
