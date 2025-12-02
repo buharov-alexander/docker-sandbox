@@ -16,8 +16,14 @@ http://localhost:8089/page.html
 ```
 
 ## Analyse existing image
+### Docker history
+Show docker instructions/layers
+```
+docker history buharovalexander/docker_sandbox:latest
+```
 ### Dive: tool for exploring a Docker image
 https://github.com/wagoodman/dive
+Show layers and changes on a filesystem
 ```
 dive buharovalexander/docker_sandbox:latest
 ```
