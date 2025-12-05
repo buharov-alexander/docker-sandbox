@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Визитка — Ваше имя</title>
+  <title>Business Card — Your Name</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -74,10 +74,10 @@
     </section>
 
     <section class="right">
-      <h1>Иван Петров</h1>
+      <h1>Ivan Petrov</h1>
       <div class="role">Senior Software Engineer</div>
 
-      <p class="about">Краткое описание: я помогаю компаниям строить надёжные распределённые системы и автоматизировать бизнес-процессы. Специализация: Java, Spring, Kafka, Docker.</p>
+      <p class="about">Short bio: I help companies build reliable distributed systems and automate business processes. Specialization: Java, Spring, Kafka, Docker.</p>
 
       <div class="badges">
         <div class="badge">Java</div>
@@ -87,12 +87,11 @@
       </div>
 
       <div class="actions">
-        <button class="btn btn-primary" onclick="copyEmail()">Скопировать e‑mail</button>
-        <a class="btn btn-ghost" href="mailto:hello@example.com">Написать</a>
+        <button class="btn btn-primary" onclick="copyEmail()">Copy e-mail</button>
+        <a class="btn btn-ghost" href="mailto:hello@example.com">Write</a>
       </div>
 
       <div style="margin-top:18px; display:flex; gap:12px; align-items:center">
-        <!-- social icons -->
         <a href="#" title="LinkedIn" aria-label="LinkedIn" style="text-decoration:none">
           <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="3" ry="3" fill="none" stroke="currentColor"/></svg>
         </a>
@@ -103,14 +102,14 @@
 
     </section>
 
-    <footer>Нажмите «Печать», чтобы получить печатную визитку. Замените данные в HTML на свои.</footer>
+    <footer>Click “Print” to get a printable business card. Replace the data in the HTML with your own.</footer>
   </main>
 
   <script>
     function copyEmail(){
       navigator.clipboard?.writeText('hello@example.com').then(()=>{
-        alert('E-mail скопирован в буфер обмена');
-      }, ()=> alert('Не удалось скопировать.')); 
+        alert('E-mail copied to clipboard');
+      }, ()=> alert('Failed to copy.')); 
     }
   </script>
 </body>
