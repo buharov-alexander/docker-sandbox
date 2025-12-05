@@ -29,3 +29,8 @@ dive buharovalexander/docker_sandbox:latest
 ```
 <img width="1726" height="943" alt="Screenshot 2025-12-02 at 13 04 25" src="https://github.com/user-attachments/assets/9b28f3e7-9961-4086-bb13-008a2c778afa" />
 
+## Analyse running container
+Use CLI in container
+```
+docker exec -it <container-id> sh
+```
